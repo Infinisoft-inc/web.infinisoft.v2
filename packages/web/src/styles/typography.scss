@@ -27,6 +27,11 @@
   font-size: calc($typo-base-size * 0.6) !important;
 }
 
+@mixin level4 {
+  @include typography;
+  font-size: calc($typo-base-size * 0.4) !important;
+}
+
 h1 {
   @include level1;
 }
@@ -37,4 +42,8 @@ h2 {
 
 h3 {
   @include level3;
+}
+
+h4 {
+  @include level4;
 }

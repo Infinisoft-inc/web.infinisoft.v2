@@ -1,0 +1,60 @@
+/**
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+ @import "../../styles/typography.scss";
+ @import "../../styles/utils.scss";
+ @import "../../styles/variables.scss";
+
+.layout {
+  z-index: 30;
+  display: block;
+  opacity: 1;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all ease-in-out 350ms;
+
+  & .video-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    & .video {
+      object-fit: cover;
+      background-size: cover;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+    }
+  }
+
+  & .toplayer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    & .container {
+      flex: 1 1 auto;
+      max-width: $app-max-width;
+      min-width: $app-min-width;
+      z-index: 40;
+      margin: 2em auto;
+    }
+  }
+}

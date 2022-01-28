@@ -7,11 +7,9 @@ const AppRouter = loadable(() => import(/* webpackChunkName: 'AppRouter' */ './f
 
 function App() {
   return (    
-    <div className="app">
       <MemoryRouter>
         <AppRouter />
       </MemoryRouter>
-    </div>
   );
 }
 

@@ -4,10 +4,9 @@
  * www.infini-soft.com
  */
 import loadable from '@loadable/component';
-import { Outlet } from 'react-router-dom';
 import './styles.scss';
 
-const Header = loadable(() => import(/* webpackChunkName: 'Header' */ './Header'))
+const Header = loadable(() => import(/* webpackChunkName: 'Header' */ '../Header/Header'))
 
 const Layout = () => {
     return <div className='layout'>
@@ -27,9 +26,9 @@ const Layout = () => {
             <div className='container'>
                 <Header />
 
-                <main className='content'>
+                {/* <main className='content'>
                     <Outlet />
-                </main>
+                </main> */}
             </div>
         </div>
     </div>

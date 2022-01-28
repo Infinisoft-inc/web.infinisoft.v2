@@ -1,0 +1,29 @@
+/**
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+@import "../../styles/typography.scss";
+@import "../../styles/utils.scss";
+@import "../../styles/variables.scss";
+
+.home {
+  display: flex;
+
+  & .solutions {
+    flex: 1 1 auto;
+    font-size: 6rem;
+    font-weight: 800;
+  }
+  & .next {
+    flex: 1 1 auto;
+    color: $primary-color-500;
+    font-weight: 800;
+    font-size: 6rem;
+  }
+  & .level {
+    flex: 1 1 auto;
+    font-weight: 800;
+    font-size: 6rem;
+  }
+}

@@ -1,0 +1,123 @@
+/**
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+ @import "../../styles/typography.scss";
+ @import "../../styles/utils.scss";
+ @import "../../styles/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $app-header-height;
+
+  @include sm {
+    justify-content: space-between;
+    margin: 0 1rem;
+  }
+
+
+  & .loading-spinner {
+    --looping-percent: 60;
+    width: 90%;
+    max-width: 5rem;
+  
+    position: relative;
+  
+    [id="master"],
+    [id="background"] {
+      stroke-width: 13;
+      stroke-linecap: round;
+    }
+  
+    [id="background"] {
+      stroke: rgba(238, 255, 0, 0.25);
+    }
+  
+    [id="master"] {
+      --looping-length: calc(
+        (var(--looping-percent) * var(--total-length)) / 100
+      );
+      stroke: rgba(238, 255, 0, 1);
+      stroke-dasharray: var(--looping-length),
+        calc(var(--total-length) - var(--looping-length));
+      animation: loading-loop 0.7s linear infinite;
+    }
+  
+    @keyframes loading-loop {
+      from {
+        stroke-dashoffset: var(--total-length);
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+
+
+  & .logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2 1 auto;
+
+    @include sm {
+      justify-content: flex-start;
+    }
+  }
+
+  .brand {
+    margin: 0 1rem;
+    color: white;
+
+    & .colored {
+      color: $primary-color-500;
+    }
+  }
+
+  & .nav {
+    display: none;
+    font-family: $primary-font;
+    flex: 1 1 auto;
+
+    @include sm {
+      display: inherit;
+    }
+
+    & .item {
+      color: $primary-color-contrast;
+      margin-left: 1rem;
+      text-decoration: none;
+      @include level4;
+
+      @include md {
+        @include level3;
+      }
+
+      @mixin item-hover {
+        text-decoration-color: $primary-color-500 !important;
+        text-decoration: underline;
+      }
+
+      &.item:hover {
+        @include item-hover();
+      }
+
+      &.active {
+        @include item-hover();
+      }
+
+      & .icon {
+        height: 16px;
+        width: 16px;
+
+        @include md {
+          height: 32px;
+          width: 32px;
+        }
+      }
+    }
+  }
+}
