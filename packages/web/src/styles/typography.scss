@@ -5,31 +5,65 @@
  */
 
 @import "./variables.scss";
+@import "./utils.scss";
+
+@mixin responsive-text($base, $md, $xl, $xxl) {
+  font-size: $base;
+
+  @include md {
+    font-size: $md;
+  }
+
+  @include xl {
+    font-size: $xl;
+  }
+
+  @include xxl {
+    font-size: $xxl;
+  }
+}
 
 @mixin typography {
   margin-top: 0 !important;
   font-family: Syne, Roboto;
   margin-bottom: 0.35rem !important;
+  color: $primary-color-contrast;
 }
 
 @mixin level1 {
   @include typography;
-  font-size: $typo-base-size !important;
+  font-size: 6rem;
+  // @include responsive-text(10.5vw, 7vw, 6vw, 5vw)
 }
 
 @mixin level2 {
   @include typography;
-  font-size: calc($typo-base-size * 0.8) !important;
+  font-size: 5rem;
+  // @include responsive-text(9vw, 5vw, 4vw, 3vw)
 }
 
 @mixin level3 {
   @include typography;
-  font-size: calc($typo-base-size * 0.6) !important;
+  font-size: 4rem;
+  // @include responsive-text(8.5vw, 4vw, 3vw, 2vw)
 }
 
 @mixin level4 {
   @include typography;
-  font-size: calc($typo-base-size * 0.4) !important;
+  font-size: 3rem;
+  // @include responsive-text(6.5vw, 3vw, 2vw, 1vw)
+}
+
+@mixin level5 {
+  @include typography;
+  font-size: 2rem;
+  // @include responsive-text(5.5vw, 3vw, 2vw, 1vw)
+}
+
+@mixin level6 {
+  @include typography;
+  font-size: 1rem;
+  // @include responsive-text(4vw, 3vw, 1vw, 1vw)
 }
 
 h1 {
@@ -46,4 +80,12 @@ h3 {
 
 h4 {
   @include level4;
+}
+
+h5 {
+  @include level5;
+}
+
+h6 {
+  @include level6;
 }

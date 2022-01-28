@@ -57,4 +57,9 @@
       margin: 2em auto;
     }
   }
+
+  & .content {
+    margin: 0 1rem;
+    height: calc(100% - 75px - 4rem);
+  }
 }

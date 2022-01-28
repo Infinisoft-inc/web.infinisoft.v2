@@ -3,10 +3,79 @@
  * Infinisoft Inc.
  * www.infini-soft.com
  */
- @import "../../styles/typography.scss";
- @import "../../styles/utils.scss";
- @import "../../styles/variables.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/utils.scss";
+@import "../../styles/variables.scss";
 
 .contact {
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  color: $primary-color-contrast;
+
+  & .informations {
+    display: flex;
+    justify-content: center;
+
+    & .container {
+      position: relative;
+      width: 400px;
+      padding: 6rem 0rem 2rem 2rem;
+      box-sizing: border-box;
+
+      @include sm-down {
+        padding: 3rem 0rem 2rem 2rem;
+      }
+
+      background: rgba(240, 255, 26, 0.52);
+      border: 3px solid #003b85;
+      border-radius: 31px;
+
+      & .title {
+        background: rgba(0, 44, 110, 0.75);
+        border: 3px solid #1070ff;
+        box-sizing: border-box;
+        padding: 0 2rem;
+        border-radius: 31px;
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+
+        @include sm-down {
+         @include level3;
+          left: 1rem;
+        }
+
+        & .colored {
+          color: $primary-color-500;
+        }
+      }
+    }
+
+    .mosaic-container {
+      @include lg-down {
+        display: none;
+      }
+      & .mosaic {
+        position: relative;
+        left: -5rem;
+        z-index: 100;
+      }
+    }
+
+    & .line {
+      display: flex;
+      align-items: center;
+      padding: 0.35rem;
+
+      & .text {
+        @include level5;
+      }
+
+      & img {
+        padding-right: 1rem;
+      }
+    }
+  }
 }

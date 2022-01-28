@@ -22,7 +22,7 @@ const Header = () => {
         ]} />
         <span className='logo'>
             <Logo />
-            <h3 className='brand'>Infini<span className='colored'>soft</span></h3>
+            <h5 className='brand'>Infini<span className='colored'>soft</span></h5>
         </span>
 
         <span className='nav'>

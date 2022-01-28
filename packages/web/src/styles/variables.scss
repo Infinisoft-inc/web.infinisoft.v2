@@ -7,14 +7,18 @@
 /*
  * App variables
  */
-$typo-base-size: 3.5rem;
+$typo-base-size: 10vw;
+// $typo-base-size: 3.5rem;
 $app-min-width: 360px;
-$app-max-width: 1200px;
+$app-max-width: 1400px;
 $app-padding: 1rem;
 $app-header-height: 75px;
 
 $primary-color-500: #EEFF00;
 $primary-color-contrast: #fff;
+
+
+
 $primary-border-color: #000;
 $layout-header-background: #ffffff;
 $layout-body-background: #b8b8b8;

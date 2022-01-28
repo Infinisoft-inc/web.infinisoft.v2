@@ -3,8 +3,11 @@
  * Infinisoft Inc.
  * www.infini-soft.com
  */
+ // Small tablets and large smartphones (landscape view)
+$screen-xs-min: 450px;
+
 // Small tablets and large smartphones (landscape view)
-$screen-sm-min: 650px;
+$screen-sm-min: 600px;
 
 // Small tablets (portrait view)
 $screen-md-min: 768px;
@@ -14,6 +17,12 @@ $screen-lg-min: 992px;
 
 // Large tablets and desktops
 $screen-xl-min: 1200px;
+
+// Computer
+$screen-xxl-min: 1400px;
+
+// Computer
+$screen-xxxl-min: 1600px;
 
 // Small devices
 @mixin sm {
@@ -43,6 +52,50 @@ $screen-xl-min: 1200px;
   }
 }
 
+// Extra large devices
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+      @content;
+  }
+}
+
+
+// Opposite
+
+// Small devices
+@mixin sm-down {
+  @media (max-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md-down {
+  @media (max-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg-down {
+  @media (max-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl-down {
+  @media (max-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xxl-down {
+  @media (max-width: #{$screen-xxl-min}) {
+      @content;
+  }
+}
 
 
 .fullheight {

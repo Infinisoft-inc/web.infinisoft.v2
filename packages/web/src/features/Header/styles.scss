@@ -9,13 +9,12 @@
 
 .header {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: $app-header-height;
+  margin: 0 1rem;
 
   @include sm {
     justify-content: space-between;
-    margin: 0 1rem;
   }
 
 
@@ -56,10 +55,8 @@
     }
   }
 
-
   & .logo {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
     flex: 2 1 auto;
 
@@ -79,10 +76,11 @@
 
   & .nav {
     display: none;
+    justify-content: flex-end;
     font-family: $primary-font;
     flex: 1 1 auto;
 
-    @include sm {
+    @include md {
       display: inherit;
     }
 
@@ -90,11 +88,7 @@
       color: $primary-color-contrast;
       margin-left: 1rem;
       text-decoration: none;
-      @include level4;
-
-      @include md {
-        @include level3;
-      }
+      @include level5;
 
       @mixin item-hover {
         text-decoration-color: $primary-color-500 !important;

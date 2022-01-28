@@ -7,8 +7,9 @@ import './styles.scss'
 
 const Home = () => {
     return <div className='home'>
-        <div className='solutions'>Solutions</div>
-        <span className='next'>NEXT</span><span className='level'>level</span>
+        <h1 className='title colored'>NEXT</h1>
+        <h1 className='title'>Level</h1>
+        <h1 className='subtitle'>S<span className='colored'>o</span>lutions</h1>
     </div>
 }
 

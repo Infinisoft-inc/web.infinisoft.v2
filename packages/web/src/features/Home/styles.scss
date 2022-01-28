@@ -9,21 +9,26 @@
 
 .home {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
 
-  & .solutions {
-    flex: 1 1 auto;
-    font-size: 6rem;
+  & .title {
     font-weight: 800;
+    color: $primary-color-contrast;
+
+    &.colored {
+      color: $primary-color-500;
+    }
   }
-  & .next {
-    flex: 1 1 auto;
-    color: $primary-color-500;
+
+  & .subtitle {
     font-weight: 800;
-    font-size: 6rem;
-  }
-  & .level {
-    flex: 1 1 auto;
-    font-weight: 800;
-    font-size: 6rem;
+    color: $primary-color-contrast;
+
+    & .colored {
+      color: $primary-color-500;
+    }
   }
 }
