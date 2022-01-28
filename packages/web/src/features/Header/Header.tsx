@@ -10,10 +10,16 @@ import './styles.scss';
 
 
 const Logo = loadable(() => import(/* webpackChunkName: 'Logo' */ './Logo'))
+const Fab = loadable(() => import(/* webpackChunkName: 'Fab' */ '../../components/Fab'))
 
 const Header = () => {
 
     return <span className='header'>
+        <Fab menuItems={[
+            { to: '/', label: 'Home' },
+            { to: 'contact', label: 'Contact' },
+            { to: 'projects', label: 'Projects' }
+        ]} />
         <span className='logo'>
             <Logo />
             <h3 className='brand'>Infini<span className='colored'>soft</span></h3>

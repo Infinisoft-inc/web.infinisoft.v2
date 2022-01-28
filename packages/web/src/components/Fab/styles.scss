@@ -1,0 +1,54 @@
+/**
+ * Copyright © All rights reserved 2022
+ * Infinisoft Inc.
+ * www.infini-soft.com
+ */
+@import "../../styles/variables.scss";
+@import "../../styles/utils.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/elevations.scss";
+
+.fab {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  flex-direction: column;
+  bottom: 1rem;
+  right: 1rem;
+
+  & .menu {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    &.close {
+      display: none
+    }
+
+    & .item {
+      @include level3;
+      color: $primary-color-contrast !important;      
+        text-decoration: none
+    }
+  }
+
+  & .button {
+    @include elevation-4;
+    display: flex;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: $primary-color-500;
+
+    & .image {
+      padding: 0.75rem;
+    }
+
+    @include sm {
+      display: none;
+    }
+  }
+}
