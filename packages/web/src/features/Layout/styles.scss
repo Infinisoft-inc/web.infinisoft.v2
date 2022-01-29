@@ -55,11 +55,15 @@
       min-width: $app-min-width;
       z-index: 40;
       margin: 2em auto;
+
+      @include landscape-mobiles {
+        margin: 0;
+      }
     }
   }
 
   & .content {
-    margin: 0 1rem;
-    height: calc(100% - 75px - 4rem);
+    margin: 1rem;
+    // height: calc(100% - 75px - 4rem); // breaks contact UI (Not sure about that, remove line after awhile)
   }
 }

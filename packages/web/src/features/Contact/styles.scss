@@ -18,19 +18,35 @@
     display: flex;
     justify-content: center;
 
+    @include md {
+      height: calc(100vh - 150px);
+      align-items: center;
+    }
+
     & .container {
       position: relative;
-      width: 400px;
-      padding: 6rem 0rem 2rem 2rem;
+      // width: 400px;
+      padding: 4rem 0rem 1rem 2rem;
       box-sizing: border-box;
-
-      @include sm-down {
-        padding: 3rem 0rem 2rem 2rem;
-      }
-
       background: rgba(240, 255, 26, 0.52);
       border: 3px solid #003b85;
       border-radius: 31px;
+
+      @include sm-down {
+        padding: 1rem 0rem 1rem 1rem;
+      }
+
+      @include md {
+        margin-top: -6rem;
+      }
+
+      @include landscape-mobiles {
+        padding: 1rem 1rem 1rem 1rem;
+        margin-top: 2rem;
+        h1 {
+          @include level3;
+        }
+      }
 
       & .title {
         background: rgba(0, 44, 110, 0.75);
@@ -43,8 +59,10 @@
         left: -3rem;
 
         @include sm-down {
-         @include level3;
+          @include level3;
           left: 1rem;
+          right: 1rem;
+          top: -2.5rem;
         }
 
         & .colored {

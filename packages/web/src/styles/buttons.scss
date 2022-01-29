@@ -4,14 +4,28 @@
  * www.infini-soft.com
  */
 @import "../styles/variables.scss";
+@import "../styles/utils.scss";
 
-.button-contained {
-  background-color: $secondary-color-500;
-  color: $secondary-color-contrast;
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   margin: 0 1rem;
   border-radius: $app-border-radius;
 
+  @include landscape-mobiles {
+   padding: 0.5rem 1rem;
+   margin: 0.5rem 1rem;
+   height: 25px;
+   width: 75px;
+  }
+}
+
+.button-contained {
+  background-color: $secondary-color-500;
+  color: $secondary-color-contrast;
+  @include button();
 
   &:hover {
     background-color: rgba($secondary-color-500, 0.9);
@@ -23,9 +37,7 @@
   background-color: transparent;
   border: 1px $secondary-color-500 solid;
   color: $secondary-color-500;
-  padding: 1rem;
-  margin: 0 1rem;
-  border-radius: $app-border-radius;
+  @include button();
 
   &:hover {
     background-color: rgba($secondary-color-500, 0.1);

@@ -13,6 +13,7 @@
   align-items: flex-start;
   flex-direction: column;
   margin-top: 2rem;
+  height: calc(100vh - 180px);
 
   h1 {
     @include level2;
@@ -27,6 +28,12 @@
   @include md {
     h1 {
       @include level1;
+    }
+  }
+
+  @include landscape-mobiles {
+    h1 {
+      @include level2;
     }
   }
 

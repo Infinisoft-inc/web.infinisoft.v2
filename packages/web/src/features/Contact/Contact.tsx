@@ -6,9 +6,7 @@
 import './styles.scss'
 
 const Contact = () => {
-    return <div className='contact'>
-       
-
+    return <div className='contact'>       
         <div className='informations'>
 
             <div>

@@ -24,6 +24,21 @@ $screen-xxl-min: 1400px;
 // Computer
 $screen-xxxl-min: 1600px;
 
+// Mobile device landscape
+$screen-landscape-height: 450px;
+
+@mixin landscape-mobiles {
+  @media (max-height: #{$screen-landscape-height}) and (orientation: landscape) {
+      @content;
+  }
+}
+
+@mixin small-height {
+  @media (max-height: #{$screen-landscape-height}) {
+      @content;
+  }
+}
+
 // Small devices
 @mixin sm {
   @media (min-width: #{$screen-sm-min}) {
