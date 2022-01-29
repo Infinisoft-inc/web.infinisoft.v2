@@ -3,9 +3,9 @@
  * Infinisoft Inc.
  * www.infini-soft.com
  */
- @import "../../styles/typography.scss";
- @import "../../styles/utils.scss";
- @import "../../styles/variables.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/utils.scss";
+@import "../../styles/variables.scss";
 
 .header {
   display: flex;
@@ -17,24 +17,23 @@
     justify-content: space-between;
   }
 
-
   & .loading-spinner {
     --looping-percent: 60;
     width: 90%;
     max-width: 5rem;
-  
+
     position: relative;
-  
+
     [id="master"],
     [id="background"] {
       stroke-width: 13;
       stroke-linecap: round;
     }
-  
+
     [id="background"] {
       stroke: rgba(238, 255, 0, 0.25);
     }
-  
+
     [id="master"] {
       --looping-length: calc(
         (var(--looping-percent) * var(--total-length)) / 100
@@ -44,7 +43,7 @@
         calc(var(--total-length) - var(--looping-length));
       animation: loading-loop 0.7s linear infinite;
     }
-  
+
     @keyframes loading-loop {
       from {
         stroke-dashoffset: var(--total-length);
@@ -68,20 +67,29 @@
   .brand {
     margin: 0 1rem;
     color: white;
+    font-weight: 600;
+    @include level3;
 
     & .colored {
       color: $primary-color-500;
     }
   }
 
-  & .nav {
+  .menu {
     display: none;
+  }
+
+  & .nav {
     justify-content: flex-end;
     font-family: $primary-font;
     flex: 1 1 auto;
 
     @include md {
       display: inherit;
+    }
+
+    &.links {
+      text-align: right;
     }
 
     & .item {
@@ -104,13 +112,8 @@
       }
 
       & .icon {
-        height: 16px;
-        width: 16px;
-
-        @include md {
-          height: 32px;
-          width: 32px;
-        }
+        height: 32px;
+        width: 32px;
       }
     }
   }

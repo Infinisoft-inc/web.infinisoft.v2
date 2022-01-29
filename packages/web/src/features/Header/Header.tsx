@@ -22,17 +22,17 @@ const Header = () => {
         ]} />
         <span className='logo'>
             <Logo />
-            <h5 className='brand'>Infini<span className='colored'>soft</span></h5>
+            <span className='brand'>Infini<span className='colored'>soft</span></span>
         </span>
 
-        <span className='nav'>
+        <span className='nav menu'>
             <NavLink to='/' className='item'>Home</NavLink>
             <NavLink to='projects' className='item'>Projects</NavLink>
             <NavLink to='contact' className='item'>Contact</NavLink>
         </span>
 
-        <span className='nav'>
-            <a target='_blank' href='https://www.npmjs.com/settings/infini-soft/packages' className='item' rel="noreferrer"><img className='icon' src='assets/npm.svg' alt='Npm link' /></a>
+        <span className='nav links'>
+            <a target='_blank' href='https://www.npmjs.com/org/infini-soft' className='item' rel="noreferrer"><img className='icon' src='assets/npm.svg' alt='Npm link' /></a>
 
             <a target='_blank' href='https://github.com/orgs/Infinisoft-inc' className='item' rel="noreferrer"><img className='icon' src='assets/github.svg' alt='Github link' /></a>
         </span>
