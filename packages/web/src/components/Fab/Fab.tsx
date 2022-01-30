@@ -21,26 +21,23 @@ const Fab = ({ menuItems }: FabProps) => {
     }
     const initialState: IState = { isOpen: false }
     const [state, setState] = useState<IState>(initialState);
-    const handleOpen: MouseEventHandler<HTMLDivElement> = (e) => {
-        // alert(`Open`)
-        setState(prev => ({ ...prev, isOpen: !prev.isOpen }))
-    }
-    const handleClose = () => {
-        // alert(`Close`)
-        setState(prev => ({ ...prev, isOpen: false }))
-    }
+    const handleOpen: MouseEventHandler<HTMLDivElement> = (e) => setState(prev => ({ ...prev, isOpen: !prev.isOpen }))
+    const handleClose = () =>  setState(prev => ({ ...prev, isOpen: false }))
 
     const wrapperRef = useRef(null);
     useClickAway(wrapperRef, handleClose);
 
     return <div className='fab' ref={wrapperRef}>
+        {state.isOpen &&
+            <div className='overlay' onClick={handleClose}/>
+        }
         <div className={`menu ${state.isOpen ? 'open' : 'close'}`}>
             {
                 menuItems.map(({ to, label }, index) => <Link to={to} key={index} className='item' onClick={handleClose}>{label}</Link>)
             }
         </div>
         <div className='button' onClick={handleOpen} >
-            {/* <img className={`image ${state.isOpen ? '' : 'close'}`} src='assets/hamburger.svg' alt='Mobile menu' /> */}
+            <img className='image' src='assets/hamburger.svg' alt='Mobile menu' />
         </div>
     </div>
 }

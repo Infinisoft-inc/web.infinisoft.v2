@@ -17,8 +17,9 @@ const Header = () => {
     return <span className='header'>
         <Fab menuItems={[
             { to: '/', label: 'Home' },
+            { to: 'projects', label: 'Projects' },
             { to: 'contact', label: 'Contact' },
-            { to: 'projects', label: 'Projects' }
+
         ]} />
         <span className='logo'>
             <Logo />

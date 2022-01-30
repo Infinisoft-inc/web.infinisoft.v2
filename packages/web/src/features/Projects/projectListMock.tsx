@@ -1,20 +1,25 @@
 import { Project } from './index';
 import { Document, ProjectDocuments } from './ProjectDocuments';
 
-const documentList: Document[] = [
+const webPortalDocumentList: Document[] = [
     { icon: <img src='assets/pdf-outlined.svg' alt='Pdf document' />, title: 'Presentation', url: '/assets/test_kickoff.pdf', download: false },
     { icon: <img src='assets/weblink.svg' alt='Web link' />, title: 'Manager', url: 'https://www.infini-soft.tools', download: false },
     { icon: <img src='assets/weblink.svg' alt='Web link' />, title: 'Portal', url: 'https://www.infini-soft.cloud', download: false },
-    { icon: <img src='assets/security.svg' alt='Web link' />, title: 'Access', url: '', download: false }
+    // { icon: <img src='assets/security.svg' alt='Web link' />, title: 'Access', url: '', download: false }
+]
+
+const vceDocumentList: Document[] = [
+    { icon: <img src='assets/weblink.svg' alt='Web link' />, title: 'Official Site', url: 'https://www.bdc.ca/en/easy-small-business-loan?gclid=Cj0KCQiA6NOPBhCPARIsAHAy2zDcGSoj-k5n_aavsCQ13cYhj7zAg8XDnPS-upjTpp1OmZUGEadZuqMaApCaEALw_wcB&gclsrc=aw.ds', download: false },
+    { icon: <img src='assets/weblink.svg' alt='Web link' />, title: 'CEO Press', url: 'https://plus.lapresse.ca/screens/6db3f32e-51e6-4db3-a11b-051394e8701a__7C___0.html', download: false },
 ]
 
 export const projectListMock: Project[] = [
     {
         id: 0,
-        title: 'Web Portal',
+        title: 'Portal',
         subtitle: 'Petit Pont',
         description: 'Multi tenant system with a public progressive web app portal offering subscriptions to broad range community services. Stack is React 17, Typescript 4.2, Antd, React Router 6, Less, Serverless, AWS, Lambda, IaC, Amplify, GraphQL, DynamoDB. State of the art designed with serverless lambda functions, event driven and micro front-end.',
-        extra: <ProjectDocuments list={documentList}
+        extra: <ProjectDocuments list={webPortalDocumentList}
         />
     },
     {
@@ -33,12 +38,13 @@ export const projectListMock: Project[] = [
         id: 3,
         title: 'VCE',
         subtitle: 'BDC',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem dolor ac volutpat, purus ultrices enim, ut. Phasellus urna rhoncus pharetra tristique sed felis faucibus ultrices.',
+        description: 'Less then 100K automated business loan without human intervention was the challenge we solved!. We collaborated to build this complex app for the Banque de Développement du Canada. Stack used Microsoft Dynamic CRM, C#, .Net framework, MSUnit Test, Unity Dependency Injection and Visual Studio Pro.',
+        extra: <ProjectDocuments list={vceDocumentList} />
     },
-    {
-        id: 4,
-        title: 'Jumbotron',
-        subtitle: 'Jean Coutu',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem dolor ac volutpat, purus ultrices enim, ut. Phasellus urna rhoncus pharetra tristique sed felis faucibus ultrices.',
-    },
+    // {
+    //     id: 4,
+    //     title: 'Jumbotron',
+    //     subtitle: 'Jean Coutu',
+    //     description: '',
+    // },
 ];
