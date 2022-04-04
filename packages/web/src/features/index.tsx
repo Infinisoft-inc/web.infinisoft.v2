@@ -7,16 +7,13 @@ const Projects = loadable(() => import(/* webpackChunkName: 'Projects' */ './Pro
 const Contact = loadable(() => import(/* webpackChunkName: 'Contact' */ './Contact/Contact'))
 
 const Router = () => {
-
-    return <Routes>
-        <Route path='/' element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path='projects/*' element={<Projects />} />
-            <Route path='contact' element={<Contact/>} />
-        </Route>
-    </Routes>
-
+    return  <Routes>
+                <Route path='/' element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path='projects/*' element={<Projects />} />
+                    <Route path='contact' element={<Contact />} />
+                </Route>
+            </Routes>
 }
-
 export default Router
 

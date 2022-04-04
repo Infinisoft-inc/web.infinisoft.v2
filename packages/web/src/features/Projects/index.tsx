@@ -27,6 +27,7 @@ const ProjectsLoader = () => {
     return <Routes>
             <Route index element={<Projects projectList={projectListMock} />} />
         </Routes>
+      
 }
 
 export default ProjectsLoader

@@ -28,6 +28,7 @@ const Header = () => {
 
         <span className='nav menu'>
             <NavLink to='/' className='item'>Home</NavLink>
+            <a href='https://www.kitchen.infini-soft.com/' className='item'>Kitchensink</a>
             <NavLink to='projects' className='item'>Projects</NavLink>
             <NavLink to='contact' className='item'>Contact</NavLink>
         </span>

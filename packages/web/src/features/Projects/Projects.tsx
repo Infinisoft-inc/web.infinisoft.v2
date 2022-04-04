@@ -5,6 +5,7 @@
  */
 import loadable from '@loadable/component'
 import { useEffect, useState } from 'react'
+import { animated, config, Transition } from "react-spring"
 import { Project, PROJECTSEVENT } from '.'
 import { off, on } from '../../helpers/events'
 import { ProjectList } from './ProjectList'
@@ -25,15 +26,33 @@ const Projects = ({ projectList }: ProjectsProps) => {
     }, [])
 
 
-    return <div className='projects'>
-        <div className='container'>
-            <h1 className='title'>Pr<span className='colored'>o</span>jects</h1>
+    return <Transition
+        items={[
+            <ProjectDetails {...projectList[selected]} count={projectList.length - 1} />]}
+        from={{ opacity: 0 }}
+        enter={{ opacity: 1 }}
+        delay={100}
+        config={config.molasses}
+    >
+        {({ opacity }, item) =>
+            <animated.div
+                style={{
+                    opacity: opacity.to({ range: [0.0, 1.0], output: [0, 1] }),
+                }}
+            >
+                <div className='projects'>
+                    <div className='container'>
+                        <h1 className='title'>Pr<span className='colored'>o</span>jects</h1>
 
-            <ProjectList projectList={projectList} />
+                        <ProjectList projectList={projectList} />
+                        {item}
+                    </div>
+                </div>
 
-            <ProjectDetails {...projectList[selected]} count={projectList.length - 1} />
-        </div>
-    </div>
+            </animated.div>
+        }
+    </Transition>
+
 }
 
 export default Projects

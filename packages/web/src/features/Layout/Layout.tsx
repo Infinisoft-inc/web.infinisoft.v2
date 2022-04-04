@@ -26,10 +26,7 @@ const Layout = () => {
         <div className='toplayer'>
             <div className='container'>
                 <Header />
-
-                <main className='content'>
-                    <Outlet />
-                </main>
+                <Outlet />
             </div>
         </div>
     </div>
