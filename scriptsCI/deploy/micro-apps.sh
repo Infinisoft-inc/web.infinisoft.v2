@@ -30,11 +30,16 @@ if [[ "$BUCKETLIST" != *"$BUCKET_NAME"* ]]; then
     
     cat $DIRECTORY/templates/cname.json \
     | sed "s/MICRO_APP_NAME/$APP_NAME/g" \
-    | sed "s/MICRO_DOMAIN/$DOMAIN/g"  #> .tmp.cname.json
+    | sed "s/MICRO_DOMAIN/$DOMAIN/g"  > .tmp.cname.json
     
+    echo "AAAAAAAAAAAA     PWD"
+    pwd
+    echo "LSLSLSLSLSLSLSL   ls"
+    ls
+
+    echo "Direcotryrtytyh"
     echo $DIRECTORY
-    cat $DIRECTORY/templates/cname.json
-    
+
     echo "Before creating bucket $BUCKET_NAME"
     #aws s3api create-bucket --bucket $BUCKET_NAME --region us-east-1 --acl public-read
     echo "Before configuring bucket with static hosting"
