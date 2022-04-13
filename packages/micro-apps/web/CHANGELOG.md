@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.29](https://github.com/Infinisoft-inc/web.infinisoft.v2/compare/web@0.1.28...web@0.1.29) (2022-04-13)
+
+**Note:** Version bump only for package web
+
+
+
+
+
 ## [0.1.28](https://github.com/Infinisoft-inc/web.infinisoft.v2/compare/web@0.1.27...web@0.1.28) (2022-04-13)
 
 **Note:** Version bump only for package web
