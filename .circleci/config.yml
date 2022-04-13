@@ -28,8 +28,8 @@ jobs:
             - yarn-packages-v1-{{ .Branch }}
             - yarn-packages-v1
       - run: yarn install
-      - run: git config --global user.email $GITHUB_EMAIL
-      - run: git config --global user.name $GITHUB_USER
+      # - run: git config --global user.email $GITHUB_EMAIL
+      # - run: git config --global user.name $GITHUB_USER
 
       - save_cache:
           paths:
@@ -62,9 +62,17 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - run:
-          command: |
-            lerna ci:version
+    - node/install:
+        install-yarn: true 
+        node-version: '16.3.0' 
+        yarn-version: '1.22.17' 
+    - checkout
+    - run: git fetch --all
+    - run: git config --global user.email $GITHUB_EMAIL
+    - run: git config --global user.name $GITHUB_USER
+    - run:
+        command: |
+          lerna ci:version
 
 workflows:
   frontend:
