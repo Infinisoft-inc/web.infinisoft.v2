@@ -1,5 +1,5 @@
 {
-  "name": "web2",
+  "name": "web",
   "version": "0.1.21",
   "dependencies": {
     "@loadable/component": "^5.15.2",
