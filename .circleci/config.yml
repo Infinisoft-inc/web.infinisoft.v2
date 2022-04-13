@@ -21,11 +21,13 @@ jobs:
             - yarn-packages-v1-{{ .Branch }}-
             - yarn-packages-v1-
       - run: yarn install
+      - run: git config --global user.email $GITHUB_EMAIL
+      - run: git config --global user.name $GITHUB_USER
+      - run: yarn ci:bootstrap
       - save_cache:
           paths:
             - ~/.cache/yarn
           key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run: yarn ci:bootstrap
       - run: yarn ci:build
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
