@@ -1,6 +1,11 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "version": "0.1.2"
+  "packages": ["packages/*"],
+  "version": "0.1.2",
+  "command": {
+    "version": {
+      "coventionalCommits": true,
+      "yes": true,
+      "message": "chore(release): publish %s [skip ci]"
+    }
+  }
 }
