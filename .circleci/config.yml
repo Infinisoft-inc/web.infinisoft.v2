@@ -44,7 +44,7 @@ jobs:
           condition:
             equal: [ "release/@infini-soft/web", << pipeline.git.branch >> ]
           steps:
-            - run: yarn ci:build --scope=web2
+            - run: yarn ci:build --scope=web
             # - aws-s3/sync:
             #     aws-access-key-id: AWS_ACCESS_KEY_ID 
             #     aws-region: AWS_REGION 
