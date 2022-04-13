@@ -3,10 +3,6 @@ PACKAGE=$1
 DOMAIN=micro.infini-soft.com
 HOSTED_ZONE_ID=Z09384211HD8EXR97FFCJ
 
-if [["$PACKAGE" == ""]]; then
-    echo "Aborting Deployment for an unknown package"
-fi
-
 PACKAGE_NAME=$(cat package.json \
     | grep name \
     | head -1 \
