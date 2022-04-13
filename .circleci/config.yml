@@ -7,14 +7,15 @@ jobs:
   infinisoft-web-v2:
     docker:
       - image: cimg/base:stable
-    working_directory: ~/web.infinisoft.v2/packages/web
     steps:
-      - checkout:
-          path: ~/web.infinisoft.v2
+      - checkout
       - node/install
-      - node/install-packages:
-          with-cache: false 
-      - run: build
+      - run:
+          name: dependencies
+          command: yarn install
+      - run:
+          name: build
+          command: yarn build
 
 workflows:
   frontend:
