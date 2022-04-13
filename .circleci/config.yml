@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.0.2
+  aws-s3: circleci/aws-s3@3.0.0
 
 jobs:
   infinisoft-web-v2:
@@ -16,6 +17,12 @@ jobs:
       - run: yarn install
       - run: yarn bootstrap
       - run: yarn build
+      - aws-s3/sync:
+          aws-access-key-id: AWS_ACCESS_KEY_ID 
+          aws-region: AWS_REGION 
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
+          from: /build 
+          to: http://www.infini-soft.com.s3-website-us-east-1.amazonaws.com 
 
 workflows:
   frontend:
