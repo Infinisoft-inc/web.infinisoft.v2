@@ -15,7 +15,8 @@ jobs:
     steps:
       - checkout
       - node/install
-      - node/install-packages
+      - node/install-packages:
+          app-dir: /packages/web 
       - run: build
 
 workflows:
