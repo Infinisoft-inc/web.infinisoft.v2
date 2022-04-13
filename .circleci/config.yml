@@ -3,6 +3,7 @@ version: 2.1
 orbs:
   node: circleci/node@5.0.2
   aws-s3: circleci/aws-s3@3.0.0
+  aws-cli: circleci/aws-cli@2.0
 
 jobs:
   infinisoft-web-v2:
@@ -13,6 +14,13 @@ jobs:
           install-yarn: true 
           node-version: '16.3.0' 
           yarn-version: '1.22.17' 
+      - aws-cli/install
+      - aws-cli/setup:
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
+          configure-default-region: true 
+
       - checkout
       - run: git fetch --all
       - restore_cache:
@@ -23,7 +31,7 @@ jobs:
       - run: yarn install
       - run: git config --global user.email $GITHUB_EMAIL
       - run: git config --global user.name $GITHUB_USER
-      # - run: yarn ci:bootstrap
+      
       - save_cache:
           paths:
             - ~/.cache/yarn

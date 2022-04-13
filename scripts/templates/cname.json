@@ -1,0 +1,18 @@
+{
+    "Comment": "MICRO_APP_NAME",
+    "Changes": [
+        {
+            "Action": "UPSERT",
+            "ResourceRecordSet": {
+                "Name": "MICRO_APP_NAME.micro.infini-soft.com.",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "MICRO_APP_NAME.MICRO_DOMAIN.s3-website-us-east-1.amazonaws.com"
+                    }
+                ]
+            }
+        }
+    ]
+}
