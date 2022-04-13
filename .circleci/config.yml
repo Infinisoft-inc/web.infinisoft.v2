@@ -21,8 +21,8 @@ jobs:
             - yarn-packages-v1-{{ .Branch }}
             - yarn-packages-v1
       - run: yarn install
-      # - run: git config --global user.email $GITHUB_EMAIL
-      # - run: git config --global user.name $GITHUB_USER
+      - run: git config --global user.email $GITHUB_EMAIL
+      - run: git config --global user.name $GITHUB_USER
       - run: yarn ci:bootstrap
       - save_cache:
           paths:
