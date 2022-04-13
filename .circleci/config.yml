@@ -45,6 +45,13 @@ jobs:
                 from: packages/web/build 
                 to: s3://infini-soft.com/
 
+      - when:
+          condition:
+            equal: [ "release/@infini-soft/test", << pipeline.git.branch >> ]
+          steps:
+            - run: yarn ci:build --scope=test
+            - run: echo "DEPLOPYING TEST..."
+
 workflows:
   frontend:
     jobs:
