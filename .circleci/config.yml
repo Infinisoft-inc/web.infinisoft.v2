@@ -39,25 +39,25 @@ jobs:
       - run: git tag
       - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=10) | sed -n 10p`' >> $BASH_ENV
       - run: echo $TAG
+      - run: yarn ci:build
+      # - when:
+      #     condition:
+      #       equal: [ "release/@infini-soft/web", << pipeline.git.branch >> ]
+      #     steps:
+      #       - run: yarn ci:build --scope=web
+      #       # - aws-s3/sync:
+      #       #     aws-access-key-id: AWS_ACCESS_KEY_ID 
+      #       #     aws-region: AWS_REGION 
+      #       #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
+      #       #     from: packages/web/build 
+      #       #     to: s3://web.micro.infini-soft.com/
 
-      - when:
-          condition:
-            equal: [ "release/@infini-soft/web", << pipeline.git.branch >> ]
-          steps:
-            - run: yarn ci:build --scope=web
-            # - aws-s3/sync:
-            #     aws-access-key-id: AWS_ACCESS_KEY_ID 
-            #     aws-region: AWS_REGION 
-            #     aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
-            #     from: packages/web/build 
-            #     to: s3://web.micro.infini-soft.com/
-
-      - when:
-          condition:
-            equal: [ "release/@infini-soft/test", << pipeline.git.branch >> ]
-          steps:
-            - run: yarn ci:build --scope=@infini-soft/test
-            - run: echo "DEPLOPYING TEST..."
+      # - when:
+      #     condition:
+      #       equal: [ "release/@infini-soft/test", << pipeline.git.branch >> ]
+      #     steps:
+      #       - run: yarn ci:build --scope=@infini-soft/test
+      #       - run: echo "DEPLOPYING TEST..."
 
 workflows:
   frontend:

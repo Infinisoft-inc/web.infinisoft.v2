@@ -5,8 +5,21 @@
   "devDependencies": {
     "lerna": "^4.0.0"
   },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/libraries/*",
+      "packages/micro-apps/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
+      "**/react-dom/**"
+    ]
+  },
   "scripts": {
-    "ci:build":"lerna run ci:build --since $TAG",
-    "ci:version":"lerna version --conventional-commits --yes"
+    "ci:build": "lerna run ci:build --since $TAG --stream --parallel",
+    "ci:version": "lerna version --conventional-commits --yes"
   }
 }

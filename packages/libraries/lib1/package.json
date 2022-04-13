@@ -1,11 +1,11 @@
 {
-  "name": "@infini-soft/test",
-  "version": "0.0.6",
+  "name": "@infini-soft/lib1",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Martin Ouimet <mouimet@infini-soft.com>",
   "homepage": "https://github.com/mouimet-infinisoft/web.infinisoft.v2#readme",
   "license": "ISC",
-  "main": "lib/test.js",
+  "main": "lib/lib1.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -21,7 +21,7 @@
     "url": "git+https://github.com/mouimet-infinisoft/web.infinisoft.v2.git"
   },
   "scripts": {
-    "hoold:ci:build": "bash ../../scriptsCI/build.sh"
+    "ci:build": "bash ../../../scriptsCI/build.sh"
   },
   "bugs": {
     "url": "https://github.com/mouimet-infinisoft/web.infinisoft.v2/issues"

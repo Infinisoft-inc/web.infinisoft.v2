@@ -13,17 +13,23 @@ PACKAGE_NAME=$(cat package.json \
   | sed 's/[",]//g' \
   | sed  's/ *//g')
 
-TAGS=$(lerna changed)
+# Parse and returns the packages subfolder
+DEPLOY_WORKFLOW=$(pwd | sed 's/.*packages//g' | awk -F/ '{ print $2 }')
 
-# CURRENT="web@0.1.10"
+DEPLOY_SCRIPT="../../../scriptsCI/$DEPLOY_WORKFLOW.sh"
+
+CHANGED_PACKAGE=$(lerna changed)
 
 echo $CURRENT
 echo $PACKAGE_VERSION
 echo $PACKAGE_NAME
-echo $TAGS
-echo $CHANGED
-lerna changed
+echo $CHANGED_PACKAGE
 
-if [[ "$TAGS" != *"$PACKAGE_NAME"* ]]; then
+if [[ "$CHANGED_PACKAGE=" == *"$PACKAGE_NAME"* ]]; then
     echo "Package unchanged!"
 fi
+
+
+pwd
+echo $DEPLOY_SCRIPT
+bash $DEPLOY_SCRIPT $PACKAGE_NAME
