@@ -15,7 +15,7 @@ APP_NAME=$(cat package.json \
     | awk -F: '{ print $2 }' \
     | sed 's/[",]//g' \
     | sed  's/ *//g' \
-| sed  's/@infini-soft//g')
+| sed  's/@infini-soft\///g')
 BUCKET_NAME="$APP_NAME.$DOMAIN"
 BUCKETLIST=$(aws s3api list-buckets)
 DIRECTORY=`dirname $0`
@@ -25,7 +25,7 @@ echo $BUCKETLIST
 echo $BUCKET_NAME
 
 if [[ "$BUCKETLIST" != *"$BUCKET_NAME"* ]]; then
-    echo "Bucket Not found for $PACKAGE_NAME"
+    echo "Bucket Not found for $BUCKET_NAME"
     echo "Bootstrapping..."
     
     cat $DIRECTORY/templates/cname.json \
@@ -40,7 +40,7 @@ if [[ "$BUCKETLIST" != *"$BUCKET_NAME"* ]]; then
     cat .tmp.cname.json
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch file://.tmp.cname.json
     rm .tmp.cname.json
-    echo "After route 53 and rm .tmp.cname.json"    
+    echo "After route 53 and rm .tmp.cname.json"
 fi
 pwd
 ls
