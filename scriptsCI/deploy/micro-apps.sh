@@ -36,11 +36,15 @@ if [[ "$BUCKETLIST" != *"$BUCKET_NAME"* ]]; then
     | sed "s/MICRO_APP_NAME/$APP_NAME/g" \
     | sed "s/MICRO_DOMAIN/$DOMAIN/g"  > .tmp.cname.json
     
+    echo "Before creating bucket $BUCKET_NAME"
     aws s3api create-bucket --bucket $BUCKET_NAME --region us-east-1 --acl public-read
+    echo "Before configuring bucket with static hosting"
     aws s3 website s3://$BUCKET_NAME/ --index-document index.html
+    echo "Before creating CNAME"
+    cat .tmp.cname.json
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch file://.tmp.cname.json
     rm .tmp.cname.json
-    
+    echo "After route 53 and rm .tmp.cname.json    
 fi
 pwd
 ls
