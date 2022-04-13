@@ -22,7 +22,7 @@ jobs:
           aws-region: AWS_REGION 
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
           from: /build 
-          to: http://www.infini-soft.com.s3-website-us-east-1.amazonaws.com 
+          to: s3://infini-soft.com/
 
 workflows:
   frontend:
