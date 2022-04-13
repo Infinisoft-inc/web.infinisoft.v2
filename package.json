@@ -19,7 +19,7 @@
     ]
   },
   "scripts": {
-    "ci:build": "lerna run ci:build --since $TAG --stream --parallel",
+    "ci:build": "lerna run ci:build --since $TAG",
     "ci:version": "lerna version --conventional-commits --yes"
   }
 }
