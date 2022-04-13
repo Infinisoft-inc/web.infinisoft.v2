@@ -17,7 +17,7 @@ jobs:
       - node/install:
           install-yarn: true
       - node/install-packages:
-          pkg-manager: yarn
+          # pkg-manager: yarn
 
 workflows:
   frontend:
@@ -25,5 +25,4 @@ workflows:
     jobs:
       - infinisoft-web-v2
       - node/run:
-          pkg-manager: yarn
-          yarn-run: build 
+            npm-run: build 
