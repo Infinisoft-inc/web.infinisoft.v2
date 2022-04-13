@@ -35,10 +35,10 @@ jobs:
           paths:
             - ~/.cache/yarn
           key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run: yarn ci:version
-      - run: git tag
-      - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=10) | sed -n 10p`' >> $BASH_ENV
-      - run: echo $TAG
+      # - run: yarn ci:version
+      # - run: git tag
+      # - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=10) | sed -n 10p`' >> $BASH_ENV
+      # - run: echo $TAG
       - run: yarn ci:build
       # - when:
       #     condition:

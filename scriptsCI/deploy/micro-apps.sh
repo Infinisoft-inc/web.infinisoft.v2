@@ -1,2 +1,8 @@
 #!/bin/sh
-echo MICRO-APPS DEPLOYMENT COMMON SCRIPT
+PACKAGE=$1
+
+if [["$PACKAGE" == ""]]; then
+    echo Aborting Deployment for an unknown package
+fi
+
+echo  "---------->    Deploying micro-app $PACKAGE"
