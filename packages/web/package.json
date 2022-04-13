@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "dependencies": {
     "@loadable/component": "^5.15.2",
     "@testing-library/jest-dom": "^5.11.4",
@@ -33,7 +33,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "newMicro":"bash ../../scripts/newMicro.sh",
+    "newMicro": "bash ../../scripts/newMicro.sh",
     "ci:build": "yarn install&& yarn run newMicro&& react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
