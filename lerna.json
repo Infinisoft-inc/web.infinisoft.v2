@@ -11,7 +11,7 @@
       "message": "chore(release): publish %s [skip ci]",
       "allowBranch": [
         "main",
-        "release/*",
+        "release/@infini-soft/*",
         "circleci-project-setup"
       ]
     }
