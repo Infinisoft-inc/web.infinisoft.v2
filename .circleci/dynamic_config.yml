@@ -6,7 +6,7 @@ orbs:
 parameters:
   run-frontend:
     type: boolean
-    default: false
+    default: true
 
 jobs:
   infinisoft-web-v2:
