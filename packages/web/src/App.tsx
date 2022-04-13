@@ -3,7 +3,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import './App.scss';
 
-const AppRouter = loadable(() => import(/* webpackChunkName: 'App Router' */ './features'))
+const AppRouter = loadable(() => import(/* webpackChunkName: 'AppRouter' */ './features'))
 
 function App() {
   return (    
