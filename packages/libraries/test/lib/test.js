@@ -3,5 +3,5 @@
 module.exports = test;
 
 function test() {
-    // TODO
+    console.log(`HI DOGUETE`)
 }
