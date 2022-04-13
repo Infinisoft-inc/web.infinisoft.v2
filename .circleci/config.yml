@@ -1,25 +1,17 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-
 orbs:
-  node: circleci/node@5.0.2
+  path-filtering: circleci/path-filtering@0.0.2
 
-jobs:
-  bootstrap:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      - node/install:
-          install-yarn: true
-      - node/install-packages:
-          pkg-manager: yarn
+# This allows you to use CircleCI's dynamic configuration feature
+setup: true
 
 workflows:
-  release:
+  run-filter:
     jobs:
-      - bootstrap
-      - node/run:
-          pkg-manager: yarn
-          yarn-run: build 
+      - path-filtering/filter:
+          # Compare files on main
+          base-revision: main
+          # 3-column space-separated table for mapping; `path-to-test parameter-to-set value-for-parameter` for each row
+          mapping: |
+            packages/web/.* run-frontend true
+          config-path: ".circleci/dynamic_config.yml"

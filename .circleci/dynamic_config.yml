@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.2
+
+parameters:
+  run-frontend:
+    type: boolean
+    default: false
+
+jobs:
+  infinisoft-web-v2:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+
+workflows:
+  frontend:
+    when: << pipeline.parameters.run-frontend >>
+    jobs:
+      - infinisoft-web-v2
+      - node/run:
+          pkg-manager: yarn
+          yarn-run: build 
