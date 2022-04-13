@@ -22,6 +22,7 @@ CHANGED_PACKAGE=$(lerna changed)
 if [[ "$CHANGED_PACKAGE=" == *"$PACKAGE_NAME"* ]]; then
     echo "Build $PACKAGE_NAME"
     yarn build
+    rm yarn.lock
     echo "Deploy $PACKAGE_NAME"
     bash $DEPLOY_SCRIPT $PACKAGE_NAME
 fi
