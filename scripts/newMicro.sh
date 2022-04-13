@@ -37,4 +37,7 @@ else
     aws s3 website s3://$BUCKET_NAME/ --index-document index.html
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch file://.tmp.cname.json
     rm .tmp.cname.json
+    
 fi
+
+aws s3 sync build s3://$BUCKET_NAME/
