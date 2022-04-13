@@ -73,9 +73,12 @@ jobs:
     - run: git config --global user.name $GITHUB_USER
     - run: git status
     - run: ls
-    - run: git add .
-    - run: git commit -am "test"
-    - run: git push
+    # - run: git add .
+    # - run: git commit -am "test"
+    # - run: git push
+    - run: git checkout .
+    - run: git status
+    - run: ls
     - run: yarn ci:version
 
 workflows:
