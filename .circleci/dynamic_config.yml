@@ -16,11 +16,11 @@ jobs:
       - checkout
       - node/install
       - node/install-packages
-
+      - node/run:
+            npm-run: build 
+            
 workflows:
   frontend:
     when: << pipeline.parameters.run-frontend >>
     jobs:
       - infinisoft-web-v2
-      - node/run:
-            npm-run: build 
