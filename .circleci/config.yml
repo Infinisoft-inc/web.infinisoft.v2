@@ -49,7 +49,7 @@ jobs:
           condition:
             equal: [ "release/@infini-soft/test", << pipeline.git.branch >> ]
           steps:
-            - run: yarn ci:build --scope=test
+            - run: yarn ci:build --scope=@infini-soft/test
             - run: echo "DEPLOPYING TEST..."
 
 workflows:
