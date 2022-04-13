@@ -21,7 +21,7 @@
     "url": "git+https://github.com/mouimet-infinisoft/web.infinisoft.v2.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "ci:build": "echo TEST BUILD"
   },
   "bugs": {
     "url": "https://github.com/mouimet-infinisoft/web.infinisoft.v2/issues"
