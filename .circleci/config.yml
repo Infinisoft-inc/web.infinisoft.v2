@@ -8,11 +8,10 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
+      - node/install-yarn
       - checkout
-      - run: ls
-      - run: cd packages/web
-      - run: yarn install
-      - run: yarn run build
+      - run: lerna bootstrap
+      - run: lerna run build
 
 workflows:
   frontend:
