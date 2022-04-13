@@ -70,15 +70,8 @@ jobs:
     - run: yarn install
     - run: git fetch --all
     - run: git config --global user.email $GITHUB_EMAIL
-    - run: git config --global user.name $GITHUB_USER
-    - run: git status
-    - run: ls
-    # - run: git add .
-    # - run: git commit -am "test"
-    # - run: git push
+    - run: git config --global user.name $GITHUB_USER  
     - run: git checkout .
-    - run: git status
-    - run: ls
     - run: yarn ci:version
 
 workflows:
