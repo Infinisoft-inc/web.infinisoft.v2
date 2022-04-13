@@ -23,7 +23,7 @@ jobs:
       - run: yarn install
       - run: git config --global user.email $GITHUB_EMAIL
       - run: git config --global user.name $GITHUB_USER
-      - run: yarn ci:bootstrap
+      # - run: yarn ci:bootstrap
       - save_cache:
           paths:
             - ~/.cache/yarn

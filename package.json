@@ -5,8 +5,7 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "ci:bootstrap":"lerna bootstrap",
-    "ci:build":"lerna run build --since $TAG",
+    "ci:build":"lerna run ci:build --since $TAG",
     "ci:version":"lerna version --conventional-commits --yes"
   }
 }
