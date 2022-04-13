@@ -9,13 +9,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - node/install
-      - run:
-          name: dependencies
-          command: yarn install
-      - run:
-          name: build
-          command: yarn run build
+      - run: ls
+      - run: cd packages/web
+      - run: yarn install
+      - run: yarn run build
 
 workflows:
   frontend:
