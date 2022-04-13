@@ -14,7 +14,6 @@ jobs:
           install-yarn: true 
           node-version: '16.3.0' 
           yarn-version: '1.22.17' 
-      - aws-cli/install
       - aws-cli/setup:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-region: AWS_REGION
@@ -31,7 +30,7 @@ jobs:
       - run: yarn install
       - run: git config --global user.email $GITHUB_EMAIL
       - run: git config --global user.name $GITHUB_USER
-      
+
       - save_cache:
           paths:
             - ~/.cache/yarn
