@@ -50,7 +50,7 @@ jobs:
                 aws-region: AWS_REGION 
                 aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
                 from: packages/web/build 
-                to: s3://infini-soft.com/
+                to: s3://web.micro.infini-soft.com/
 
       - when:
           condition:
