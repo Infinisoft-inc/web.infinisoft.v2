@@ -67,6 +67,7 @@ jobs:
         node-version: '16.3.0' 
         yarn-version: '1.22.17' 
     - checkout
+    - run: yarn install
     - run: git fetch --all
     - run: git config --global user.email $GITHUB_EMAIL
     - run: git config --global user.name $GITHUB_USER
