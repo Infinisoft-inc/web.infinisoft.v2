@@ -16,9 +16,8 @@ jobs:
       - checkout
       - node/install
       - node/install-packages
-      - node/run:
-            npm-run: build 
-            
+      - run: build
+
 workflows:
   frontend:
     when: << pipeline.parameters.run-frontend >>
