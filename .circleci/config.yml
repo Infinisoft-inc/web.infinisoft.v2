@@ -40,10 +40,6 @@ jobs:
       # - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=10) | sed -n 10p`' >> $BASH_ENV
       # - run: echo $TAG
       - run: yarn ci:build
-      - save_workspace:
-          root: .     # relative path to our working directory
-          paths:      # file globs which will be persisted to the workspace
-           - packages/**/*
       # - when:
       #     condition:
       #       equal: [ "release/@infini-soft/web", << pipeline.git.branch >> ]
@@ -66,9 +62,6 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      # attach the files you persisted in the doing-things-job
-      - attach_workspace:
-          at: . # relative path to our working directory
       - run:
           command: |
             lerna ci:version
