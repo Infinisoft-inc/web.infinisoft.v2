@@ -8,7 +8,10 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - node/install-yarn
+      - node/install:
+          install-yarn: true 
+          node-version: '16.3.0' 
+          yarn-version: '1.22.17' 
       - checkout
       - run: lerna bootstrap
       - run: lerna run build
