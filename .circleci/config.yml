@@ -17,11 +17,14 @@ jobs:
       - run: yarn install
       - run: yarn bootstrap
       - run: yarn build
+      - run: ls
+      - run: ls packages
+      - run: ls packages/web
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
           aws-region: AWS_REGION 
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
-          from: build 
+          from: packages/web/build 
           to: s3://infini-soft.com/
 
 workflows:
