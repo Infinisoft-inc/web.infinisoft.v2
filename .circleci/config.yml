@@ -71,9 +71,7 @@ jobs:
     - run: git fetch --all
     - run: git config --global user.email $GITHUB_EMAIL
     - run: git config --global user.name $GITHUB_USER
-    - run:
-        command: |
-          lerna ci:version
+    - run: yarn ci:version
 
 workflows:
   frontend:
