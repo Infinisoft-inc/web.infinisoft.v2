@@ -25,11 +25,8 @@ jobs:
           paths:
             - ~/.cache/yarn
           key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-      - run: yarn bootstrap
-      - run: yarn build
-      - run: ls
-      - run: ls packages
-      - run: ls packages/web
+      - run: yarn ci:bootstrap
+      - run: yarn ci:build
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
           aws-region: AWS_REGION 
