@@ -40,7 +40,7 @@ if [[ "$BUCKETLIST" != *"$BUCKET_NAME"* ]]; then
     cat .tmp.cname.json
     aws route53 change-resource-record-sets --hosted-zone-id $HOSTED_ZONE_ID --change-batch file://.tmp.cname.json
     rm .tmp.cname.json
-    echo "After route 53 and rm .tmp.cname.json    
+    echo "After route 53 and rm .tmp.cname.json"    
 fi
 pwd
 ls
