@@ -14,10 +14,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-      - node/install-packages:
-          # pkg-manager: yarn
+      - node/install
+      - node/install-packages
 
 workflows:
   frontend:
