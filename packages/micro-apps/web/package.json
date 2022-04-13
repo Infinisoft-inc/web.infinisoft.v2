@@ -1,6 +1,6 @@
 {
   "name": "web",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "dependencies": {
     "@loadable/component": "^5.15.2",
     "@testing-library/jest-dom": "^5.11.4",
