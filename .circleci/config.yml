@@ -7,9 +7,10 @@ jobs:
   infinisoft-web-v2:
     docker:
       - image: cimg/base:stable
+    working_directory: ~/web.infinisoft.v2/packages/web
     steps:
-      - checkout
-      - working_directory: ~/web.infinisoft.v2/packages/web
+      - checkout:
+          path: ~/web.infinisoft.v2
       - node/install
       - node/install-packages:
           with-cache: false 
