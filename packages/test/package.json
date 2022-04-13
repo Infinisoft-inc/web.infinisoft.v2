@@ -21,7 +21,7 @@
     "url": "git+https://github.com/mouimet-infinisoft/web.infinisoft.v2.git"
   },
   "scripts": {
-    "ci:build": "echo TEST BUILD"
+    "ci:build": "echo TEST BUILD DOGUIETTE"
   },
   "bugs": {
     "url": "https://github.com/mouimet-infinisoft/web.infinisoft.v2/issues"
