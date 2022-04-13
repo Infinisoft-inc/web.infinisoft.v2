@@ -21,6 +21,7 @@
     "url": "git+https://github.com/mouimet-infinisoft/web.infinisoft.v2.git"
   },
   "scripts": {
+    "build":"echo LIB BUILD",
     "ci:build": "bash ../../../scriptsCI/build.sh"
   },
   "bugs": {

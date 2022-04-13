@@ -16,20 +16,20 @@ PACKAGE_NAME=$(cat package.json \
 # Parse and returns the packages subfolder
 DEPLOY_WORKFLOW=$(pwd | sed 's/.*packages//g' | awk -F/ '{ print $2 }')
 
-DEPLOY_SCRIPT="../../../scriptsCI/$DEPLOY_WORKFLOW.sh"
+DEPLOY_SCRIPT="../../../scriptsCI/deploy/$DEPLOY_WORKFLOW.sh"
+BUILD_SCRIPT="../../../scriptsCI/build/$DEPLOY_WORKFLOW.sh"
 
 CHANGED_PACKAGE=$(lerna changed)
 
-echo $CURRENT
-echo $PACKAGE_VERSION
-echo $PACKAGE_NAME
-echo $CHANGED_PACKAGE
+# echo $CURRENT
+# echo $PACKAGE_VERSION
+# echo $PACKAGE_NAME
+# echo $CHANGED_PACKAGE
 
 if [[ "$CHANGED_PACKAGE=" == *"$PACKAGE_NAME"* ]]; then
-    echo "Package unchanged!"
+    echo "Build $PACKAGE_NAME"
+    yarn build
+    echo "Deploy $PACKAGE_NAME"
+    bash $DEPLOY_SCRIPT $PACKAGE_NAME
 fi
 
-
-pwd
-echo $DEPLOY_SCRIPT
-bash $DEPLOY_SCRIPT $PACKAGE_NAME
