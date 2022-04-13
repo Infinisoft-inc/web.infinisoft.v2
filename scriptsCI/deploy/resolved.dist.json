@@ -1,0 +1,154 @@
+{
+  "ETag": "E231A6PH75NSSB",
+  "Distribution": {
+    "Id": "E3U44C60YNDMWR",
+    "ARN": "arn:aws:cloudfront::727567418011:distribution/E3U44C60YNDMWR",
+    "Status": "Deployed",
+    "LastModifiedTime": "2022-04-13T16:31:40.866000+00:00",
+    "InProgressInvalidationBatches": 0,
+    "DomainName": "d3d3ajuw0g6eo0.cloudfront.net",
+    "ActiveTrustedSigners": { "Enabled": false, "Quantity": 0 },
+    "ActiveTrustedKeyGroups": { "Enabled": false, "Quantity": 0 },
+    "DistributionConfig": {
+      "CallerReference": "5af03304-8cc6-4b0d-81ab-f6f6236ff2db",
+      "Aliases": {
+        "Quantity": 2,
+        "Items": [
+          "web.micro.infini-soft.com",
+          "micro1.micro.infini-soft.com",
+          "JESUSS.micro.infini-soft.com"
+        ]
+      },
+      "DefaultRootObject": "index.html",
+      "Origins": {
+        "Quantity": 2,
+        "Items": [
+          {
+            "Id": "web.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "DomainName": "web.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "OriginPath": "",
+            "CustomHeaders": { "Quantity": 0 },
+            "S3OriginConfig": { "OriginAccessIdentity": "" },
+            "ConnectionAttempts": 3,
+            "ConnectionTimeout": 10,
+            "OriginShield": { "Enabled": false }
+          },
+          {
+            "Id": "micro1.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "DomainName": "micro1.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "OriginPath": "",
+            "CustomHeaders": { "Quantity": 0 },
+            "S3OriginConfig": { "OriginAccessIdentity": "" },
+            "ConnectionAttempts": 3,
+            "ConnectionTimeout": 10,
+            "OriginShield": { "Enabled": false }
+          },
+          {
+            "Id": "JESUSS.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "DomainName": "JESUSS.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "OriginPath": "",
+            "CustomHeaders": { "Quantity": 0 },
+            "S3OriginConfig": { "OriginAccessIdentity": "" },
+            "ConnectionAttempts": 3,
+            "ConnectionTimeout": 10,
+            "OriginShield": { "Enabled": false }
+          }
+        ]
+      },
+      "OriginGroups": { "Quantity": 0 },
+      "DefaultCacheBehavior": {
+        "TargetOriginId": "web.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+        "TrustedSigners": { "Enabled": false, "Quantity": 0 },
+        "TrustedKeyGroups": { "Enabled": false, "Quantity": 0 },
+        "ViewerProtocolPolicy": "redirect-to-https",
+        "AllowedMethods": {
+          "Quantity": 2,
+          "Items": ["HEAD", "GET"],
+          "CachedMethods": { "Quantity": 2, "Items": ["HEAD", "GET"] }
+        },
+        "SmoothStreaming": false,
+        "Compress": true,
+        "LambdaFunctionAssociations": { "Quantity": 0 },
+        "FunctionAssociations": { "Quantity": 0 },
+        "FieldLevelEncryptionId": "",
+        "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6"
+      },
+      "CacheBehaviors": {
+        "Quantity": 1,
+        "Items": [
+          {
+            "PathPattern": "*",
+            "TargetOriginId": "micro1.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "TrustedSigners": { "Enabled": false, "Quantity": 0 },
+            "TrustedKeyGroups": { "Enabled": false, "Quantity": 0 },
+            "ViewerProtocolPolicy": "redirect-to-https",
+            "AllowedMethods": {
+              "Quantity": 2,
+              "Items": ["HEAD", "GET"],
+              "CachedMethods": { "Quantity": 2, "Items": ["HEAD", "GET"] }
+            },
+            "SmoothStreaming": false,
+            "Compress": true,
+            "LambdaFunctionAssociations": { "Quantity": 0 },
+            "FunctionAssociations": { "Quantity": 0 },
+            "FieldLevelEncryptionId": "",
+            "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6"
+          },
+          {
+            "PathPattern": "*",
+            "TargetOriginId": "JESUSS.micro.infini-soft.com.s3.us-east-1.amazonaws.com",
+            "TrustedSigners": { "Enabled": false, "Quantity": 0 },
+            "TrustedKeyGroups": { "Enabled": false, "Quantity": 0 },
+            "ViewerProtocolPolicy": "redirect-to-https",
+            "AllowedMethods": {
+              "Quantity": 2,
+              "Items": ["HEAD", "GET"],
+              "CachedMethods": { "Quantity": 2, "Items": ["HEAD", "GET"] }
+            },
+            "SmoothStreaming": false,
+            "Compress": true,
+            "LambdaFunctionAssociations": { "Quantity": 0 },
+            "FunctionAssociations": { "Quantity": 0 },
+            "FieldLevelEncryptionId": "",
+            "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6"
+          }
+        ]
+      },
+      "CustomErrorResponses": { "Quantity": 0 },
+      "Comment": "",
+      "Logging": {
+        "Enabled": false,
+        "IncludeCookies": false,
+        "Bucket": "",
+        "Prefix": ""
+      },
+      "PriceClass": "PriceClass_All",
+      "Enabled": true,
+      "ViewerCertificate": {
+        "CloudFrontDefaultCertificate": false,
+        "ACMCertificateArn": "arn:aws:acm:us-east-1:727567418011:certificate/6e7e4bfa-5828-4c05-bcf9-4d3b9e50e150",
+        "SSLSupportMethod": "sni-only",
+        "MinimumProtocolVersion": "TLSv1.2_2021",
+        "Certificate": "arn:aws:acm:us-east-1:727567418011:certificate/6e7e4bfa-5828-4c05-bcf9-4d3b9e50e150",
+        "CertificateSource": "acm"
+      },
+      "Restrictions": {
+        "GeoRestriction": { "RestrictionType": "none", "Quantity": 0 }
+      },
+      "WebACLId": "",
+      "HttpVersion": "http2",
+      "IsIPV6Enabled": true
+    },
+    "AliasICPRecordals": [
+      { "CNAME": "web.micro.infini-soft.com", "ICPRecordalStatus": "APPROVED" },
+      {
+        "CNAME": "micro1.micro.infini-soft.com",
+        "ICPRecordalStatus": "APPROVED"
+      },
+      {
+        "CNAME": "JESUSS.micro.infini-soft.com",
+        "ICPRecordalStatus": "APPROVED"
+      }
+    ]
+  }
+}
