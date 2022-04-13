@@ -15,7 +15,11 @@ jobs:
           yarn-version: '1.22.17' 
       - checkout
       - run: git fetch --all
-      - restore_cache
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}
+            - yarn-packages-v1
       - run: yarn install
       # - run: git config --global user.email $GITHUB_EMAIL
       # - run: git config --global user.name $GITHUB_USER
