@@ -39,5 +39,6 @@ else
     rm .tmp.cname.json
     
 fi
-
+pwd
+ls
 aws s3 sync build s3://$BUCKET_NAME/
