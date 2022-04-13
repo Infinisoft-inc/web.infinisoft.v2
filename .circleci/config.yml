@@ -1,17 +1,26 @@
 version: 2.1
-orbs:
-  path-filtering: circleci/path-filtering@0.0.2
 
-# This allows you to use CircleCI's dynamic configuration feature
-setup: true
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  infinisoft-web-v2:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - working_directory: ~/web.infinisoft.v2/packages/web
+      - node/install
+      - node/install-packages:
+          with-cache: false 
+      - run: build
 
 workflows:
-  run-filter:
+  frontend:
     jobs:
-      - path-filtering/filter:
-          # Compare files on main
-          base-revision: circleci-project-setup
-          # 3-column space-separated table for mapping; `path-to-test parameter-to-set value-for-parameter` for each row
-          mapping: |
-            packages/web/.* run-frontend true
-          config-path: ".circleci/dynamic_config.yml"
+      - infinisoft-web-v2
+
+
+
+
+          
