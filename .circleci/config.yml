@@ -6,7 +6,7 @@ orbs:
   aws-cli: circleci/aws-cli@2.0
 
 jobs:
-  infinisoft-web-v2:
+  build-deploy:
     docker:
       - image: cimg/base:stable
     steps:
@@ -40,6 +40,7 @@ jobs:
       # - run: echo 'export TAG=`git describe --abbrev=0 --tags $(git rev-list --tags --max-count=10) | sed -n 10p`' >> $BASH_ENV
       # - run: echo $TAG
       - run: yarn ci:build
+      - run: yarn ci:version
       # - when:
       #     condition:
       #       equal: [ "release/@infini-soft/web", << pipeline.git.branch >> ]
@@ -62,4 +63,4 @@ jobs:
 workflows:
   frontend:
     jobs:
-      - infinisoft-web-v2
+      - build-deploy
