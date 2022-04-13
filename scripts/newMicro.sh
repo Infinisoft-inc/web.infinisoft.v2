@@ -42,4 +42,3 @@ fi
 pwd
 ls
 aws s3 sync build s3://$BUCKET_NAME/ --acl public-read
-aws s3api put-object-acl --bucket $BUCKET_NAME --acl public-read --key /
