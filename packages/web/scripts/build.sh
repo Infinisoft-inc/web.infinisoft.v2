@@ -22,7 +22,8 @@ echo $PACKAGE_VERSION
 echo $PACKAGE_NAME
 echo $TAGS
 echo $CHANGED
+lerna changed
 
-if [[ "$TAGS" == *"$CURRENT"* ]]; then
+if [[ "$TAGS" != *"$PACKAGE_NAME"* ]]; then
     echo "Package unchanged!"
 fi
