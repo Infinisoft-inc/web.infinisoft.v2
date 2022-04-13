@@ -14,15 +14,10 @@ jobs:
           yarn-version: '1.22.17' 
       - checkout
       - run: yarn install
-      - run: lerna bootstrap
-      - run: lerna run build
+      - run: yarn bootstrap
+      - run: yarn build
 
 workflows:
   frontend:
     jobs:
       - infinisoft-web-v2
-
-
-
-
-          
